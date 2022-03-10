@@ -5,26 +5,23 @@
 #include <QCoreApplication>
 
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-{
+    : QMainWindow(parent) {
     initUI();
 }
 
-MainWindow::~MainWindow()
-{
+MainWindow::~MainWindow() {
 }
 
-void MainWindow::initUI()
-{
+void MainWindow::initUI() {
     setWindowTitle("Saccade Recorder 2");
 
-    QMenuBar *bar = this->menuBar();
+    _mainToolbar = this->addToolBar(tr("Main Toolbar"));
 
-    _fileMenu = bar->addMenu(tr("&File"));
-
-    _newRecordingAction = _fileMenu->addAction(QIcon(":/icons/new.svg"), tr("&New Recording"));
-    _fileMenu->addSeparator();
-    _quitAction = _fileMenu->addAction(QIcon(":/icons/exit.svg"), tr("&Quit"));
+    _newRecordingAction = _mainToolbar->addAction(QIcon(":/icons/new.svg"), tr("&New Recording"));
+    _mainToolbar->addSeparator();
+    _showSelectRecordingDeviceAction = _mainToolbar->addAction(QIcon(":/icons/bluetooth.svg"), tr("&Select Recording Device"));
+    _mainToolbar->addSeparator();
+    _quitAction = _mainToolbar->addAction(QIcon(":/icons/exit.svg"), tr("&Quit"));
 
     _newRecordingWizard = new NewRecordingWizard(this);
 
@@ -34,5 +31,10 @@ void MainWindow::initUI()
     connect(_quitAction, &QAction::triggered,
             QCoreApplication::instance(), &QCoreApplication::quit,
             Qt::QueuedConnection);
+}
+
+void MainWindow::showSelectRecordingDevice()
+{
+
 }
 

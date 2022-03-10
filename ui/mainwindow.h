@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QMenu>
+#include <QToolBar>
 #include <ui/newwizard/wizard.h>
 
 class MainWindow : public QMainWindow
@@ -16,11 +16,15 @@ public:
 private:
     void initUI();
 
-    QMenu *_fileMenu = nullptr;
+    QToolBar *_mainToolbar = nullptr;
 
     QAction *_newRecordingAction = nullptr;
+    QAction *_showSelectRecordingDeviceAction = nullptr;
     QAction *_quitAction = nullptr;
 
     NewRecordingWizard *_newRecordingWizard = nullptr;
+
+private slots:
+    void showSelectRecordingDevice();
 };
 #endif // MAINWINDOW_H
