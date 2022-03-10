@@ -16,7 +16,7 @@
 #define MAX_DEVS 255
 
 
-BITalino::VDevInfo BITalino::find(void) {
+BITalino::VDevInfo BITalino::find() {
     VDevInfo devs;
     DevInfo  devInfo;
 

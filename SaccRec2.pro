@@ -8,6 +8,7 @@ SOURCES += \
     adq/bitalino.cpp \
     adq/utils.cpp \
     main.cpp \
+    ui/deviceselector.cpp \
     ui/mainwindow.cpp \
     ui/newwizard/welcomepage.cpp \
     ui/newwizard/wizard.cpp
@@ -15,6 +16,7 @@ SOURCES += \
 HEADERS += \
     adq/bitalino.h \
     adq/utils.h \
+    ui/deviceselector.h \
     ui/mainwindow.h \
     ui/newwizard/welcomepage.h \
     ui/newwizard/wizard.h

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QToolBar>
+#include <ui/deviceselector.h>
 #include <ui/newwizard/wizard.h>
 
 class MainWindow : public QMainWindow
@@ -11,11 +12,8 @@ class MainWindow : public QMainWindow
 
 public:
     MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
 
 private:
-    void initUI();
-
     QToolBar *_mainToolbar = nullptr;
 
     QAction *_newRecordingAction = nullptr;
@@ -23,8 +21,6 @@ private:
     QAction *_quitAction = nullptr;
 
     NewRecordingWizard *_newRecordingWizard = nullptr;
-
-private slots:
-    void showSelectRecordingDevice();
+    DeviceSelectorDialog *_deviceSelectionDialog = nullptr;
 };
 #endif // MAINWINDOW_H

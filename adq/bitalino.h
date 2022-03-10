@@ -57,7 +57,7 @@ public:
       const char* getDescription(void);   // Returns an exception description string
    };
 
-   static VDevInfo find(void);
+   static VDevInfo find();
 
    BITalino(const char *address);
    ~BITalino();

@@ -6,13 +6,6 @@
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent) {
-    initUI();
-}
-
-MainWindow::~MainWindow() {
-}
-
-void MainWindow::initUI() {
     setWindowTitle("Saccade Recorder 2");
 
     _mainToolbar = this->addToolBar(tr("Main Toolbar"));
@@ -24,17 +17,15 @@ void MainWindow::initUI() {
     _quitAction = _mainToolbar->addAction(QIcon(":/icons/exit.svg"), tr("&Quit"));
 
     _newRecordingWizard = new NewRecordingWizard(this);
+    _deviceSelectionDialog = new DeviceSelectorDialog(this);
 
     connect(_newRecordingAction, &QAction::triggered,
             _newRecordingWizard, &NewRecordingWizard::exec);
+
+    connect(_showSelectRecordingDeviceAction, &QAction::triggered,
+            _deviceSelectionDialog, &DeviceSelectorDialog::exec);
 
     connect(_quitAction, &QAction::triggered,
             QCoreApplication::instance(), &QCoreApplication::quit,
             Qt::QueuedConnection);
 }
-
-void MainWindow::showSelectRecordingDevice()
-{
-
-}
-
