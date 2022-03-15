@@ -1,4 +1,4 @@
-QT += core gui widgets
+QT += core gui widgets svgwidgets
 
 CONFIG += c++11
 
@@ -11,7 +11,10 @@ SOURCES += \
     ui/deviceselector.cpp \
     ui/mainwindow.cpp \
     ui/newwizard/welcomepage.cpp \
-    ui/newwizard/wizard.cpp
+    ui/newwizard/wizard.cpp \
+    ui/settings/electrodeitem.cpp \
+    ui/settings/electrodespage.cpp \
+    ui/settings/settings.cpp
 
 HEADERS += \
     adq/bitalino.h \
@@ -19,7 +22,10 @@ HEADERS += \
     ui/deviceselector.h \
     ui/mainwindow.h \
     ui/newwizard/welcomepage.h \
-    ui/newwizard/wizard.h
+    ui/newwizard/wizard.h \
+    ui/settings/electrodeitem.h \
+    ui/settings/electrodespage.h \
+    ui/settings/settings.h
 
 TRANSLATIONS += \
     SaccRec2_es_ES.ts

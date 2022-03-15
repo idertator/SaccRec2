@@ -3,5 +3,7 @@
         <file>icons/exit.svg</file>
         <file>icons/new.svg</file>
         <file>icons/bluetooth.svg</file>
+        <file>icons/settings.svg</file>
+        <file>settings/face.svg</file>
     </qresource>
 </RCC>
