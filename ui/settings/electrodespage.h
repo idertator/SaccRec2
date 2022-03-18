@@ -8,7 +8,9 @@
 #include <QGraphicsScene>
 #include <QGraphicsSvgItem>
 
+
 #include "electrodeitem.h"
+#include "channelitem.h"
 
 class ElectrodesPage : public QWidget
 {
@@ -25,6 +27,8 @@ private:
     ElectrodeItem *_rightElectrode = nullptr;
     ElectrodeItem *_topElectrode = nullptr;
     ElectrodeItem *_bottomElectrode = nullptr;
+    ChannelItem *_horizontalChannel = nullptr;
+    ChannelItem *_verticalChannel = nullptr;
 
     QVBoxLayout *_mainLayout = nullptr;
 };
