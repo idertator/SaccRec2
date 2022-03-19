@@ -12,6 +12,7 @@ SOURCES += \
     ui/mainwindow.cpp \
     ui/newwizard/welcomepage.cpp \
     ui/newwizard/wizard.cpp \
+    ui/settings/channelgroup.cpp \
     ui/settings/channelitem.cpp \
     ui/settings/electrodeitem.cpp \
     ui/settings/electrodespage.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     ui/mainwindow.h \
     ui/newwizard/welcomepage.h \
     ui/newwizard/wizard.h \
+    ui/settings/channelgroup.h \
     ui/settings/channelitem.h \
     ui/settings/electrodeitem.h \
     ui/settings/electrodespage.h \

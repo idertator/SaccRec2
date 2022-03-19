@@ -11,6 +11,7 @@
 
 #include "electrodeitem.h"
 #include "channelitem.h"
+#include "channelgroup.h"
 
 class ElectrodesPage : public QWidget
 {
@@ -30,7 +31,23 @@ private:
     ChannelItem *_horizontalChannel = nullptr;
     ChannelItem *_verticalChannel = nullptr;
 
-    QVBoxLayout *_mainLayout = nullptr;
+    ChannelGroup *_horizontalGroup = nullptr;
+    ChannelGroup *_verticalGroup = nullptr;
+
+    QVBoxLayout *_diagramLayout = nullptr;
+    QVBoxLayout *_parametersLayout = nullptr;
+    QHBoxLayout *_mainLayout = nullptr;
+
+private slots:
+    void setHorizontalChannelVisible(bool visible);
+    void setHorizontalChannelInput(const QString &channel);
+    void setLeftElectrodeMark(const QString &mark);
+    void setRightElectrodeMark(const QString &mark);
+
+    void setVerticalChannelVisible(bool visible);
+    void setVerticalChannelInput(const QString &channel);
+    void setTopElectrodeMark(const QString &mark);
+    void setBottomElectodeMark(const QString &mark);
 };
 
 #endif // ELECTRODESPAGE_H

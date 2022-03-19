@@ -14,6 +14,8 @@ public:
     QRectF boundingRect() const override;
     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) override;
 
+    void setInputChannel(const QString &channel);
+
 private:
     QString _label;
     QString _channel;

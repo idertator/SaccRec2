@@ -51,3 +51,9 @@ void ChannelItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *optio
     painter->drawText(_path.last().p2() + QPoint(-20, 4), _channel);
     painter->restore();
 }
+
+void ChannelItem::setInputChannel(const QString &channel)
+{
+    _channel = channel;
+    update();
+}
