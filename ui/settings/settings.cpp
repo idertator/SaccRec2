@@ -22,6 +22,15 @@ SettingsDialog::SettingsDialog(QWidget *parent)
 
     setLayout(_mainLayout);
 
+    connect(_saveButton, &QPushButton::pressed,
+            this, &SettingsDialog::onSaveButtonClicked);
+
     connect(_cancelButton, &QPushButton::pressed,
-            this, &QDialog::hide);
+            this, &SettingsDialog::hide);
+}
+
+void SettingsDialog::onSaveButtonClicked()
+{
+    _electrodesPage->saveSettings();
+    hide();
 }

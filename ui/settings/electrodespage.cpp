@@ -1,4 +1,7 @@
 #include "electrodespage.h"
+#include "consts.h"
+
+#include <QSettings>
 
 ElectrodesPage::ElectrodesPage(QWidget *parent)
     : QWidget{parent}
@@ -58,6 +61,8 @@ ElectrodesPage::ElectrodesPage(QWidget *parent)
 
     setLayout(_mainLayout);
 
+    loadSettings();
+
     connect(_horizontalGroup, &ChannelGroup::useChannelChanged,
             this, &ElectrodesPage::setHorizontalChannelVisible);
 
@@ -83,13 +88,66 @@ ElectrodesPage::ElectrodesPage(QWidget *parent)
             this, &ElectrodesPage::setBottomElectodeMark);
 }
 
+ void ElectrodesPage::loadSettings()
+ {
+     QSettings settings;
+
+     bool useHorizontalChannel = settings.value(S_HORIZONTAL_USED, true).toBool();
+     _horizontalGroup->setUsed(useHorizontalChannel);
+     setHorizontalChannelVisible(useHorizontalChannel);
+
+     QString horizontalInput = settings.value(S_HORIZONTAL_INPUT, "A1").toString();
+     _horizontalGroup->setInputChannel(horizontalInput);
+     _horizontalChannel->setInputChannel(horizontalInput);
+
+     QString leftMark = settings.value(S_HORIZONTAL_LEFT_MARK, "").toString();
+     _horizontalGroup->setEye1Mark(leftMark);
+     _leftElectrode->setMark(leftMark);
+
+     QString rightMark = settings.value(S_HORIZONTAL_RIGHT_MARK, "").toString();
+     _horizontalGroup->setEye2Mark(rightMark);
+     _rightElectrode->setMark(rightMark);
+
+     bool useVerticalChannel = settings.value(S_VERTICAL_USED, true).toBool();
+     _verticalGroup->setUsed(useVerticalChannel);
+     setVerticalChannelVisible(useVerticalChannel);
+
+     QString verticalInput = settings.value(S_VERTICAL_INPUT, "A2").toString();
+     _verticalGroup->setInputChannel(verticalInput);
+     _verticalChannel->setInputChannel(verticalInput);
+
+     QString topMark = settings.value(S_VERTICAL_TOP_MARK, "").toString();
+     _verticalGroup->setEye1Mark(topMark);
+     _topElectrode->setMark(topMark);
+
+     QString bottomMark = settings.value(S_VERTICAL_BOTTOM_MARK, "").toString();
+     _verticalGroup->setEye2Mark(bottomMark);
+     _bottomElectrode->setMark(bottomMark, false);
+
+     _scene->update();
+ }
+
+ void ElectrodesPage::saveSettings()
+ {
+     QSettings settings;
+
+     settings.setValue(S_HORIZONTAL_USED, _horizontalGroup->isUsed());
+     settings.setValue(S_HORIZONTAL_INPUT, _horizontalGroup->inputChannel());
+     settings.setValue(S_HORIZONTAL_LEFT_MARK, _horizontalGroup->eye1Mark());
+     settings.setValue(S_HORIZONTAL_RIGHT_MARK, _horizontalGroup->eye2Mark());
+
+     settings.setValue(S_VERTICAL_USED, _verticalGroup->isUsed());
+     settings.setValue(S_VERTICAL_INPUT, _verticalGroup->inputChannel());
+     settings.setValue(S_VERTICAL_TOP_MARK, _verticalGroup->eye1Mark());
+     settings.setValue(S_VERTICAL_BOTTOM_MARK, _verticalGroup->eye2Mark());
+ }
+
 void ElectrodesPage::setHorizontalChannelVisible(bool visible)
 {
     _horizontalChannel->setVisible(visible);
     _leftElectrode->setVisible(visible);
     _rightElectrode->setVisible(visible);
     _scene->update();
-
 }
 
 void ElectrodesPage::setHorizontalChannelInput(const QString &channel)

@@ -21,6 +21,7 @@ SOURCES += \
 HEADERS += \
     adq/bitalino.h \
     adq/utils.h \
+    consts.h \
     ui/deviceselector.h \
     ui/mainwindow.h \
     ui/newwizard/welcomepage.h \

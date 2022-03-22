@@ -38,6 +38,46 @@ ChannelGroup::ChannelGroup(const QString &label, const QString &eye1, const QStr
             this, &ChannelGroup::onEye2TextChanged);
 }
 
+bool ChannelGroup::isUsed()
+{
+    return _useChannel->isChecked();
+}
+
+void ChannelGroup::setUsed(bool value)
+{
+    _useChannel->setChecked(value);
+}
+
+QString ChannelGroup::inputChannel() const
+{
+    return _channelInput->currentText();
+}
+
+void ChannelGroup::setInputChannel(const QString &value)
+{
+    _channelInput->setCurrentText(value);
+}
+
+QString ChannelGroup::eye1Mark() const
+{
+    return _eye1Mark->text();
+}
+
+void ChannelGroup::setEye1Mark(const QString &value)
+{
+    _eye1Mark->setText(value);
+}
+
+QString ChannelGroup::eye2Mark() const
+{
+    return _eye2Mark->text();
+}
+
+void ChannelGroup::setEye2Mark(const QString &value)
+{
+    _eye2Mark->setText(value);
+}
+
 void ChannelGroup::onUseChannelStateChanged(int state)
 {
     bool checked = state == Qt::Checked;

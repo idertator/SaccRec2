@@ -8,7 +8,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsSvgItem>
 
-
 #include "electrodeitem.h"
 #include "channelitem.h"
 #include "channelgroup.h"
@@ -18,6 +17,9 @@ class ElectrodesPage : public QWidget
     Q_OBJECT
 public:
     explicit ElectrodesPage(QWidget *parent = nullptr);
+
+     void loadSettings();
+     void saveSettings();
 
 private:
     QGraphicsView *_schema = nullptr;

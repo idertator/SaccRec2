@@ -16,6 +16,9 @@ class SettingsDialog : public QDialog
 public:
     explicit SettingsDialog(QWidget *parent = nullptr);
 
+private slots:
+    void onSaveButtonClicked();
+
 private:
     QTabWidget *_tabWidget = nullptr;
 

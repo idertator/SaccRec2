@@ -15,6 +15,18 @@ class ChannelGroup : public QGroupBox
 public:
     explicit ChannelGroup(const QString &label, const QString &eye1, const QString &eye2, QWidget *parent = nullptr);
 
+    bool isUsed();
+    void setUsed(bool value = true);
+
+    QString inputChannel() const;
+    void setInputChannel(const QString &value);
+
+    QString eye1Mark() const;
+    void setEye1Mark(const QString &value);
+
+    QString eye2Mark() const;
+    void setEye2Mark(const QString &value);
+
 signals:
     void useChannelChanged(bool use);
     void inputChannelChanged(const QString &channel);

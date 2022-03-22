@@ -7,6 +7,11 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+    a.setOrganizationName("idertator");
+    a.setOrganizationDomain("idertator.com");
+    a.setApplicationName("SaccRec2");
+    a.setApplicationDisplayName("Saccade Recorder 2");
+    a.setApplicationVersion("1.0.0");
 
     QTranslator translator;
     const QStringList uiLanguages = QLocale::system().uiLanguages();
