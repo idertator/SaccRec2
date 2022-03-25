@@ -10,6 +10,7 @@ SOURCES += \
     main.cpp \
     ui/deviceselector.cpp \
     ui/mainwindow.cpp \
+    ui/newwizard/subjectpage.cpp \
     ui/newwizard/welcomepage.cpp \
     ui/newwizard/wizard.cpp \
     ui/settings/channelgroup.cpp \
@@ -24,6 +25,7 @@ HEADERS += \
     consts.h \
     ui/deviceselector.h \
     ui/mainwindow.h \
+    ui/newwizard/subjectpage.h \
     ui/newwizard/welcomepage.h \
     ui/newwizard/wizard.h \
     ui/settings/channelgroup.h \
