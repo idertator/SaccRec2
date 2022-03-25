@@ -8,11 +8,16 @@ SOURCES += \
     adq/bitalino.cpp \
     adq/utils.cpp \
     main.cpp \
+    models/protocol.cpp \
+    models/protocoltest.cpp \
     ui/deviceselector.cpp \
     ui/mainwindow.cpp \
+    ui/newwizard/protocolpage.cpp \
     ui/newwizard/subjectpage.cpp \
     ui/newwizard/welcomepage.cpp \
     ui/newwizard/wizard.cpp \
+    ui/protocols/protocoltestwidget.cpp \
+    ui/protocols/protocolwidget.cpp \
     ui/settings/channelgroup.cpp \
     ui/settings/channelitem.cpp \
     ui/settings/electrodeitem.cpp \
@@ -23,11 +28,16 @@ HEADERS += \
     adq/bitalino.h \
     adq/utils.h \
     consts.h \
+    models/protocol.h \
+    models/protocoltest.h \
     ui/deviceselector.h \
     ui/mainwindow.h \
+    ui/newwizard/protocolpage.h \
     ui/newwizard/subjectpage.h \
     ui/newwizard/welcomepage.h \
     ui/newwizard/wizard.h \
+    ui/protocols/protocoltestwidget.h \
+    ui/protocols/protocolwidget.h \
     ui/settings/channelgroup.h \
     ui/settings/channelitem.h \
     ui/settings/electrodeitem.h \

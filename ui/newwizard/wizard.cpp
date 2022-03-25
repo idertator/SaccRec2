@@ -5,7 +5,9 @@ NewRecordingWizard::NewRecordingWizard(QWidget *parent)
 {
     _welcomePage = new NewRecordingWizardWelcomePage(this);
     _subjectPage = new NewRecordingWizardSubjectPage(this);
+    _protocolPage = new NewRecordingWizardProtocolPage(this);
 
     addPage(_welcomePage);
     addPage(_subjectPage);
+    addPage(_protocolPage);
 }

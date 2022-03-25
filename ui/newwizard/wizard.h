@@ -6,6 +6,7 @@
 
 #include "welcomepage.h"
 #include "subjectpage.h"
+#include "protocolpage.h"
 
 class NewRecordingWizard : public QWizard
 {
@@ -16,6 +17,7 @@ public:
 private:
     NewRecordingWizardWelcomePage *_welcomePage = nullptr;
     NewRecordingWizardSubjectPage *_subjectPage = nullptr;
+    NewRecordingWizardProtocolPage *_protocolPage = nullptr;
 };
 
 #endif // NEWRECORDINGWIZARD_H
